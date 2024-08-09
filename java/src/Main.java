@@ -1,5 +1,5 @@
 import solutions.Solution;
-import solutions.leetcode.*;
+import solutions.leetcode.arrays.LC_238;
 
 public class Main {
     public static void main(String[] args) {

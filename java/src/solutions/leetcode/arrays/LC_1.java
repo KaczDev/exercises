@@ -1,4 +1,4 @@
-package solutions.leetcode;
+package solutions.leetcode.arrays;
 
 import solutions.Solution;
 
