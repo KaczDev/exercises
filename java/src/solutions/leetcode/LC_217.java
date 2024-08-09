@@ -2,11 +2,10 @@ package solutions.leetcode;
 
 import solutions.Solution;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
+// https://leetcode.com/problems/contains-duplicate/description/
 public class LC_217 implements Solution {
     @Override
     public void solve() {
