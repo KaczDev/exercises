@@ -33,11 +33,6 @@ public class LC_704 implements Solution {
             } else {
                 lo = mid + 1;
             }
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         } while (lo < hi);
         return -1;
     }

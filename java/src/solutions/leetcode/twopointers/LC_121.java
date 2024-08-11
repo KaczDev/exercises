@@ -9,15 +9,15 @@ public class LC_121 implements Solution {
         int[] prices1 = new int[]{7, 1, 5, 3, 6, 4};
         int[] prices2 = new int[]{7, 6, 4, 3, 1};
 
-        System.out.println(this.solution(prices1));
-        System.out.println(this.solution(prices2));
-        System.out.println(this.solution2(prices1));
-        System.out.println(this.solution2(prices2));
+        System.out.println(this.maxProfit(prices1));
+        System.out.println(this.maxProfit(prices2));
+        System.out.println(this.maxProfit2(prices1));
+        System.out.println(this.maxProfit2(prices2));
     }
 
     // Time: (n)
     // Space: O(1)
-    private int solution(int[] prices) {
+    private int maxProfit(int[] prices) {
         int maxProfit = 0;
         int left = 0; //buy
         int right = 1; //sell
@@ -34,7 +34,7 @@ public class LC_121 implements Solution {
     }
 
     //Marcelina
-    private int solution2(int[] prices) {
+    private int maxProfit2(int[] prices) {
         int maxProfit = 0;
         int minL = Integer.MAX_VALUE; //buy
         for (int price : prices) {
@@ -43,6 +43,5 @@ public class LC_121 implements Solution {
             maxProfit = Math.max(maxProfit, profit);
         }
         return maxProfit;
-
     }
 }
