@@ -1,4 +1,4 @@
-package solutions.leetcode.arrays;
+package solutions.leetcode.twopointers;
 
 import solutions.Solution;
 
@@ -11,6 +11,8 @@ public class LC_121 implements Solution {
 
         System.out.println(this.solution(prices1));
         System.out.println(this.solution(prices2));
+        System.out.println(this.solution2(prices1));
+        System.out.println(this.solution2(prices2));
     }
 
     // Time: (n)
@@ -29,5 +31,18 @@ public class LC_121 implements Solution {
             right += 1;
         }
         return maxProfit;
+    }
+
+    //Marcelina
+    private int solution2(int[] prices) {
+        int maxProfit = 0;
+        int minL = Integer.MAX_VALUE; //buy
+        for (int price : prices) {
+            minL = Math.min(minL, price);
+            int profit = price - minL;
+            maxProfit = Math.max(maxProfit, profit);
+        }
+        return maxProfit;
+
     }
 }

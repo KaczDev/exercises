@@ -25,11 +25,32 @@ public class LC_15 implements Solution {
         Arrays.sort(nums); //TODO do quicksort just for my own practice
         //Go over the sorted array
         // If value is the same skip
-        int prevValue =
-
         //Take the first available value and then to TwoPointer TwoSum on all of the elements to the right
-        //Then take next available value and do the TwoSum again
-
+        for (int i = 0; i < nums.length; i++) {
+            int curValue = nums[i];
+            if (i > 0 && curValue == nums[i - 1]) {
+                continue;
+            }
+            int l = i + 1, r = nums.length - 1;
+            while (l < r) {
+                int threeSum = curValue + nums[l] + nums[r];
+                if (threeSum > 0) {
+                    r -= 1;
+                }
+                if (threeSum < 0) {
+                    l += 1;
+                }
+                if (threeSum == 0) {
+                    res.add(List.of(curValue, nums[l], nums[r]));
+                    l++;
+                    //Update one of the pointer as if statements above will update the other.
+                    while (nums[l] == nums[l - 1] && l < r) {
+                        l++;
+                    }
+                }
+            }
+            //Then take next available value and do the TwoSum again
+        }
         return res;
     }
 }
