@@ -1,4 +1,4 @@
-package solutions.leetcode.arrays;
+package solutions.neetcode.roadmap.arrays;
 
 import solutions.Solution;
 

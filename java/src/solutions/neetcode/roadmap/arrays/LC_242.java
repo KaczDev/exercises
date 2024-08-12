@@ -1,8 +1,7 @@
-package solutions.leetcode.arrays;
+package solutions.neetcode.roadmap.arrays;
 
 import solutions.Solution;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

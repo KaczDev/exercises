@@ -1,9 +1,6 @@
-package solutions.leetcode.twopointers;
+package solutions.neetcode.roadmap.twopointers;
 
-import org.w3c.dom.ls.LSOutput;
 import solutions.Solution;
-
-import java.io.CharConversionException;
 
 public class LC_125 implements Solution {
     @Override

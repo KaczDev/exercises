@@ -1,4 +1,4 @@
-package solutions.leetcode.stacks;
+package solutions.neetcode.roadmap.stacks;
 
 import solutions.Solution;
 

@@ -1,10 +1,7 @@
-package solutions.leetcode.stacks;
+package solutions.neetcode.roadmap.stacks;
 
 import solutions.Solution;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Stack;
 
 // https://leetcode.com/problems/min-stack/description/

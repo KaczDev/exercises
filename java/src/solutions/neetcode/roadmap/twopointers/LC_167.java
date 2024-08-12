@@ -1,4 +1,4 @@
-package solutions.leetcode.twopointers;
+package solutions.neetcode.roadmap.twopointers;
 
 import solutions.Solution;
 

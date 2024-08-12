@@ -1,11 +1,8 @@
-package solutions.leetcode.arrays;
+package solutions.neetcode.roadmap.arrays;
 
 import solutions.Solution;
 
-import java.awt.desktop.AppReopenedEvent;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 //https://leetcode.com/problems/longest-consecutive-sequence/description/
