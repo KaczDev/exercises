@@ -11,7 +11,7 @@ import solutions.neetcode.roadmap.stacks.*;
 
 public class Main {
     public static void main(String[] args) {
-        Solution solution = new LC_287();
+        Solution solution = new LC_25();
         solution.solve();
     }
 
