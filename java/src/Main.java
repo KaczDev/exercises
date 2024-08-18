@@ -5,7 +5,7 @@ import solutions.neetcode.roadmap.trees.*;
 public class Main {
     public static void main(String[] args) {
         Solution solution;
-        solution = new LC_230();
+        solution = new LC_297();
         solution.solve();
     }
 
