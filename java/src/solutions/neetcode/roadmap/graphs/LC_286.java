@@ -2,8 +2,7 @@ package solutions.neetcode.roadmap.graphs;
 
 import solutions.Solution;
 
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 public class LC_286 implements Solution {
     @Override
@@ -25,32 +24,40 @@ public class LC_286 implements Solution {
     record Cord(int r, int c) {
     }
 
-    private void islandsAndTreasure(int[][] grid) {
+    public void islandsAndTreasure(int[][] grid) {
         boolean[][] visited = new boolean[grid.length][grid[0].length];
+        Deque<Cord> q = new ArrayDeque<>();
         for (int r = 0; r < grid.length; r++) {
             for (int c = 0; c < grid[0].length; c++) {
-                if (!visited[r][c] && isLand(grid, r, c)) {
-                    Stack<Cord> path = new Stack<>();
-                    path.push(new Cord(r, c));
+                if (isChest(grid, r, c)) {
+                    q.add(new Cord(r, c));
                     visited[r][c] = true;
-                    this.dfs(grid, visited, path, r, c);
                 }
             }
         }
+        int dist = 0;
+        while (!q.isEmpty()) {
+            int qSize = q.size();
+            for (int i = 0; i < qSize; i++) {
+                Cord c = q.removeFirst();
+                grid[c.r][c.c] = dist;
+
+                addRoom(visited, grid, q, c.r + 1, c.c);
+                addRoom(visited, grid, q, c.r - 1, c.c);
+                addRoom(visited, grid, q, c.r, c.c + 1);
+                addRoom(visited, grid, q, c.r, c.c - 1);
+            }
+            dist += 1;
+        }
     }
 
-    private void dfs(int[][] grid, boolean[][] visited, Stack<Cord> path, int r, int c) {
-        //TODO
-
-        //Walk the graph
-
-        //When found chest
-        //backtrack using path and update grid values with the distance to chest.
-    }
-
-
-    private boolean isLand(int[][] g, int r, int c) {
-        return g[r][c] == Integer.MAX_VALUE;
+    private void addRoom(boolean[][] visited, int[][] grid, Deque<Cord> q, int r, int c) {
+        if (r < 0 || r >= grid.length
+                || c < 0 || c >= grid[0].length || visited[r][c] || isWater(grid, r, c)) {
+            return;
+        }
+        visited[r][c] = true;
+        q.addLast(new Cord(r, c));
     }
 
     private boolean isWater(int[][] g, int r, int c) {
