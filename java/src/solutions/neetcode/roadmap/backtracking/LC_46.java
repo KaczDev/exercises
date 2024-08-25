@@ -34,7 +34,7 @@ public class LC_46 implements Solution {
         return this.recurse(nums, 0);
     }
 
-    public List<List<Integer>> recurse(int[] nums, int idxToAdd) {
+    private List<List<Integer>> recurse(int[] nums, int idxToAdd) {
         if (nums.length <= idxToAdd) {
             List<List<Integer>> emptySub = new ArrayList<>();
             emptySub.add(new ArrayList<>());
