@@ -1,4 +1,4 @@
-package solutions.neetcode.roadmap.trees;
+package solutions.leetcode.trees;
 
 import java.util.List;
 

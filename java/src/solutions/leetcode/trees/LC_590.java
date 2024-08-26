@@ -1,6 +1,7 @@
-package solutions.neetcode.roadmap.trees;
+package solutions.leetcode.trees;
 
 import solutions.Solution;
+import solutions.leetcode.trees.NTreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

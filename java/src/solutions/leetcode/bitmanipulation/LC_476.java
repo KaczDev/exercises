@@ -1,4 +1,4 @@
-package solutions.leetcode;
+package solutions.leetcode.bitmanipulation;
 
 import solutions.Solution;
 
