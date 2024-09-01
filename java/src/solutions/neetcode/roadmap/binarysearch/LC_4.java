@@ -15,41 +15,39 @@ public class LC_4 implements Solution {
 
     // Time: O( log(min(n,m)) )
     private double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] A = nums1, B = nums2;
+        int[] A = nums1;
+        int[] B = nums2;
         int total = A.length + B.length;
-        int half = total / 2;
+        int half = (total + 1) / 2;
 
         if (B.length < A.length) {
-            int[] tmp = A;
+            int[] temp = A;
             A = B;
-            B = tmp;
+            B = temp;
         }
-        //A is shorter
-        //B is longer
-        int l = 0, r = A.length - 1;
-        while (true) {
-            int i = (l + r) / 2; //middle val of Array A
-            int j = half - i - 2; //partition index of Array B
 
-            //Any of those could be out of bounds that's why we have if statements
-            int Aleft = i >= 0 ? A[i] : Integer.MIN_VALUE;
-            int Aright = (i + 1) < A.length ? A[i + 1] : Integer.MAX_VALUE;
-            int Bleft = j >= 0 ? B[j] : Integer.MIN_VALUE;
-            int Bright = (j + 1) < B.length ? B[j + 1] : Integer.MAX_VALUE;
+        int l = 0;
+        int r = A.length;
+        while (l <= r) {
+            int i = (l + r) / 2;
+            int j = half - i;
 
-            //partition is correct
+            int Aleft = i > 0 ? A[i - 1] : Integer.MIN_VALUE;
+            int Aright = i < A.length ? A[i] : Integer.MAX_VALUE;
+            int Bleft = j > 0 ? B[j - 1] : Integer.MIN_VALUE;
+            int Bright = j < B.length ? B[j] : Integer.MAX_VALUE;
+
             if (Aleft <= Bright && Bleft <= Aright) {
-                //odd
                 if (total % 2 != 0) {
-                    return Math.min(Aright, Bright);
+                    return Math.max(Aleft, Bleft);
                 }
-                //even
-                return (float) (Math.max(Aleft, Bleft) + Math.min(Aright, Bright)) / 2;
+                return (Math.max(Aleft, Bleft) + Math.min(Aright, Bright)) / 2.0;
             } else if (Aleft > Bright) {
                 r = i - 1;
             } else {
                 l = i + 1;
             }
         }
+        return -1;
     }
 }
