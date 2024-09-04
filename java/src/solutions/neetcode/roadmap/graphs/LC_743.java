@@ -11,6 +11,10 @@ public class LC_743 implements Solution {
         int n = 4;
         int k = 2;
         System.out.println("Solution: " + this.networkDelayTime(times, n, k));
+        times = new int[][]{{1, 2, 1}, {2, 3, 2}, {1, 3, 2}};
+        n = 3;
+        k = 1;
+        System.out.println("Solution: " + this.networkDelayTime(times, n, k));
     }
 
     //Time: O(E*log(V)) - Dijkstra's Shortest Path
