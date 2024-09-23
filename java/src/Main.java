@@ -5,13 +5,14 @@ import solutions.leetcode.backtracking.LC_386;
 import solutions.leetcode.backtracking.LC_440;
 import solutions.leetcode.bitmanipulation.LC_2419;
 import solutions.leetcode.dynamic_programming.LC_241;
+import solutions.leetcode.dynamic_programming.LC_2707;
 import solutions.leetcode.trees.LC_222;
 
 
 public class Main {
     public static void main(String[] args) {
         Solution solution;
-        solution = new LC_440();
+        solution = new LC_2707();
         solution.solve();
     }
 }
