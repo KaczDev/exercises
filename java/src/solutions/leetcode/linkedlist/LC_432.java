@@ -10,7 +10,14 @@ import java.util.Set;
 public class LC_432 implements Solution {
     @Override
     public void solve() {
-
+        AllOne al = new AllOne();
+        al.inc("hello");
+        al.inc("hello");
+        System.out.println(al.getMaxKey());
+        System.out.println(al.getMinKey());
+        al.inc("leet");
+        System.out.println(al.getMaxKey());
+        System.out.println(al.getMinKey());
     }
     class Node {
 
